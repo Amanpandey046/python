@@ -2,17 +2,21 @@
 
 # Function to print Fibonacci Series.
 def fibo(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
+    if n <= 1:
+        return n
     else:
-        temp = fibo(n-1)
-        print(temp)
+        return fibo(n-1) + fibo(n-2)
 
 # Take input from User.
-number = int(input("Enter the Number"))
+number = int(input("Enter the Number : "))
 
 # Call Series Function.
-fibo(number)
+temp = list()
 
+while number > -1:
+   value = fibo(number)
+   number = number - 1
+   temp.append(value)
+
+temp.reverse()
+print(temp)
